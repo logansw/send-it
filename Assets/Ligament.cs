@@ -6,6 +6,7 @@ public class Ligament : MonoBehaviour
 {
     [SerializeField] private Transform _connectionOne;
     [SerializeField] private Transform _connectionTwo;
+    [SerializeField] private GameObject _hand;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -24,5 +25,7 @@ public class Ligament : MonoBehaviour
         transform.localScale = new Vector3(distance, 1, 1);
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
         transform.position = positionOne;
+
+        _hand.transform.localRotation = transform.localRotation;
     }
 }
