@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,17 @@ public class GameManager : MonoBehaviour
     private IEnumerator _countdownCoroutine;
     private bool _isCountingDown;
     [SerializeField] private Countdown _countdown;
+    [SerializeField] private GameObject _chalkyPrefab;
+    private GameObject _chalkyInstance;
+    [SerializeField] private CinemachineVirtualCamera _virtualCamera;
+
+    void OnEnable() {
+        LevelManager.e_OnRestart += Restart;
+    }
+
+    void OnDisable() {
+        LevelManager.e_OnRestart -= Restart;
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,5 +33,12 @@ public class GameManager : MonoBehaviour
             _isCountingDown = false;
             _countdown.EndCountdown();
         }
+    }
+
+    void Restart() {
+        Destroy(_chalkyInstance);
+        _chalkyInstance = Instantiate(_chalkyPrefab, LevelManager.SpawnPosition, Quaternion.identity);
+        s_HandsOnFinish = 0;
+        _virtualCamera.Follow = _chalkyInstance.transform.Find("Body");
     }
 }

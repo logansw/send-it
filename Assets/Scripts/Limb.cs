@@ -8,7 +8,6 @@ public class Limb : MonoBehaviour
     [SerializeField] private MouseMagnet _connectionTwo;
     [SerializeField] private Clamp _clampTwo;
 
-
     // Update is called once per frame
     void FixedUpdate()
     {
