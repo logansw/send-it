@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _chalkyPrefab;
     private GameObject _chalkyInstance;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
+    public static bool Ragdoll = false;
 
     void OnEnable() {
         LevelManager.e_OnRestart += Restart;
@@ -28,10 +29,12 @@ public class GameManager : MonoBehaviour
             _countdownCoroutine = _countdown.StartCountdown();
             StartCoroutine(_countdownCoroutine);
             _isCountingDown = true;
+            Ragdoll = true;
         } else if (_isCountingDown && s_HandsOnFinish != 2) {
             StopCoroutine(_countdownCoroutine);
             _isCountingDown = false;
             _countdown.EndCountdown();
+            Ragdoll = false;
         }
     }
 

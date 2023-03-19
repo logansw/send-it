@@ -34,12 +34,13 @@ public class Clamp : MonoBehaviour
         for (int i = 0; i < _repeatRaycastOffsets.Length; i++) {
             RaycastHit2D hit = Physics2D.Raycast(transform.position + _repeatRaycastOffsets[i], Vector3.forward);
 
-            if (hit && hit.collider.gameObject.layer.Equals(6))
-            {
+            if (hit && hit.collider.gameObject.layer.Equals(6)) {
                 _rigidbody2d.bodyType = RigidbodyType2D.Static;
                 IsClamping = true;
-                if (hit.collider.gameObject.name == "Top")
-                {
+                if (hit.collider.gameObject.name == "Start") {
+                    RouteStart routeStart = hit.collider.gameObject.GetComponent<RouteStart>();
+                    routeStart.Begin();
+                } else if (hit.collider.gameObject.name == "Top") {
                     _holdingTop = true;
                     GameManager.s_HandsOnFinish++;
                 }

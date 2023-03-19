@@ -4,15 +4,55 @@ using UnityEngine;
 
 public class Holdable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private Collider2D _collider;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    private Color32 _color;
+
+    public void Awake() {
+        _collider = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Enable() {
+        _collider.enabled = true;
+        _color.a = 255;
+        _spriteRenderer.color = _color;
+    }
+    public void Disable() {
+        _collider.enabled = false;
+        _color.a = 100;
+        _spriteRenderer.color = _color;
+    }
+
+    public void SetColor(Route.ColorGrade color) {
+        switch (color) {
+            case Route.ColorGrade.Yellow:
+                _color = new Color32(255, 211, 55, 255);
+                break;
+            case Route.ColorGrade.Red:
+                _color = new Color32(237, 86, 86, 255);
+                break;
+            case Route.ColorGrade.Green:
+                _color = new Color32(41, 173, 70, 255);
+                break;
+            case Route.ColorGrade.Purple:
+                _color = new Color32(125, 122, 159, 255);
+                break;
+            case Route.ColorGrade.Orange:
+                _color = new Color32(248, 152, 41, 255);
+                break;
+            case Route.ColorGrade.Black:
+                _color = new Color32(59, 59, 59, 255);
+                break;
+            case Route.ColorGrade.Blue:
+                _color = new Color32(45, 190, 190, 255);
+                break;
+            case Route.ColorGrade.Pink:
+                _color = new Color32(241, 101, 193, 255);
+                break;
+            case Route.ColorGrade.White:
+                _color = new Color32(255, 255, 255, 255);
+                break;
+        }
+        _spriteRenderer.color = _color;
     }
 }

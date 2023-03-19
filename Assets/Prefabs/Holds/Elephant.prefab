@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3497337796861667917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6874270223039686120, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_Name
+      value: Elephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686124, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686126, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_Size.x
+      value: 4.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686126, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9153376
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874270223039686126, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 887657053, guid: 0ced38d9ae106db4c93bfe056d7650ad, type: 3}
+    - target: {fileID: 6874270223039686126, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+--- !u!1 &8065764873238204325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6874270223039686120, guid: 1d5dc933e82743b4082a2aa816b4c7a9, type: 3}
+  m_PrefabInstance: {fileID: 3497337796861667917}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &8268861023665255591
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065764873238204325}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.09, y: 2.9153376}
+    newSize: {x: 4.09, y: 2.9153376}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.8989501, y: -0.9948634}
+      - {x: 2.0226123, y: -0.6513575}
+      - {x: 2.0363524, y: -0.5689161}
+      - {x: 2.0363524, y: -0.1017481}
+      - {x: 1.9951317, y: 0.104355425}
+      - {x: 1.9264306, y: 0.29671872}
+      - {x: 1.8027685, y: 0.54404294}
+      - {x: 1.6241454, y: 0.77762693}
+      - {x: 1.4043016, y: 0.98373044}
+      - {x: 1.2256786, y: 1.1073925}
+      - {x: 0.89591295, y: 1.2585351}
+      - {x: 0.7035497, y: 1.3272363}
+      - {x: 0.33256334, y: 1.4096777}
+      - {x: 0.1264598, y: 1.4371582}
+      - {x: -0.36818865, y: 1.4371582}
+      - {x: -0.6704738, y: 1.3959376}
+      - {x: -0.80787617, y: 1.3409766}
+      - {x: -1.1376418, y: 1.189834}
+      - {x: -1.3162649, y: 1.0661719}
+      - {x: -1.4261868, y: 0.96999025}
+      - {x: -1.5773293, y: 0.77762693}
+      - {x: -1.6460305, y: 0.69518554}
+      - {x: -1.8383938, y: 0.28297848}
+      - {x: -1.907095, y: 0.104355425}
+      - {x: -1.9483156, y: -0.12922858}
+      - {x: -1.9895364, y: -0.39029303}
+      - {x: -2.0307572, y: -0.7612794}
+      - {x: -2.0307572, y: -0.98112315}
+      - {x: -2.0032766, y: -1.036084}
+      - {x: -1.852134, y: -1.1047852}
+      - {x: -1.4811476, y: -1.1185255}
+      - {x: -1.4124465, y: -1.0773048}
+      - {x: -1.330005, y: -0.91242194}
+      - {x: -1.2887844, y: -0.8162403}
+      - {x: -1.1651223, y: -0.6925782}
+      - {x: -0.972759, y: -0.59639657}
+      - {x: -0.7529152, y: -0.62387705}
+      - {x: -0.5468117, y: -0.74753916}
+      - {x: -0.53307146, y: -0.8437208}
+      - {x: -0.49185076, y: -1.0635645}
+      - {x: -0.4643703, y: -1.1322657}
+      - {x: -0.40940934, y: -1.200967}
+      - {x: -0.12086442, y: -1.3383693}
+      - {x: 0.25012192, y: -1.4070704}
+      - {x: 0.53866684, y: -1.4482912}
+      - {x: 0.9508739, y: -1.4482912}
+      - {x: 1.2943798, y: -1.4070704}
+      - {x: 1.5279638, y: -1.3246291}
+      - {x: 1.6378857, y: -1.2696681}

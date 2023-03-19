@@ -24,6 +24,7 @@ public class Countdown : MonoBehaviour
 
     public void EndCountdown() {
         _spriteRenderer.sprite = null;
+        GameManager.Ragdoll = false;
     }
 
     public IEnumerator AnimateSprite(Sprite sprite) {

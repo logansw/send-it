@@ -11,7 +11,7 @@ public class MouseMagnet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (magnetOn && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))) {
+        if (magnetOn && !GameManager.Ragdoll) {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 direction = Vector3.Normalize(mousePosition - transform.position);
             _rigidbody2d.AddForce(direction * _magnetStrength);
