@@ -9,14 +9,19 @@ public class Countdown : MonoBehaviour
     [SerializeField] private Sprite _two;
     [SerializeField] private Sprite _one;
     [SerializeField] private Sprite _top;
+    public AudioSource CountdownSound;
+
+    [SerializeField] private Timer _timer;
 
     public IEnumerator StartCountdown() {
+        CountdownSound.Play();
         StartCoroutine(AnimateSprite(_three));
         yield return new WaitForSeconds(1);
         StartCoroutine(AnimateSprite(_two));
         yield return new WaitForSeconds(1);
         StartCoroutine(AnimateSprite(_one));
         yield return new WaitForSeconds(1);
+        _timer.EndTimer();
         StartCoroutine(AnimateSprite(_top));
         yield return new WaitForSeconds(1);
         EndCountdown();
@@ -25,6 +30,7 @@ public class Countdown : MonoBehaviour
     public void EndCountdown() {
         _spriteRenderer.sprite = null;
         GameManager.Ragdoll = false;
+        CountdownSound.Stop();
     }
 
     public IEnumerator AnimateSprite(Sprite sprite) {

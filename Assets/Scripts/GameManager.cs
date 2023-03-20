@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private GameObject _chalkyInstance;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     public static bool Ragdoll = false;
+    public static Route s_CurrentRoute;
 
     void OnEnable() {
         LevelManager.e_OnRestart += Restart;

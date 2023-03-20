@@ -19,10 +19,10 @@ public class Route : MonoBehaviour
     public RouteStart RouteStart;
     public ColorGrade RouteColor;
     public int Difficulty;
-    public float BestTime;
+    public System.TimeSpan BestTime;
+    private System.DateTime _startTime;
 
     public void Awake() {
-        Debug.Log(gameObject.name);
         for (int i = 0; i < transform.childCount; i++) {
             GameObject child = transform.GetChild(i).gameObject;
             Holds.Add(child.GetComponent<Holdable>());
@@ -34,7 +34,7 @@ public class Route : MonoBehaviour
         for (int i = 0; i < Holds.Count; i++) {
             Holds[i].SetColor(RouteColor);
         }
-        BestTime = 0;
+        BestTime = System.TimeSpan.MaxValue;
     }
 
     public void Start() {

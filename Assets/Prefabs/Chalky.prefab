@@ -196,7 +196,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.5
   m_GravityScale: 1
@@ -204,7 +204,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1122853778230815805
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 1254531966161421103}
   - component: {fileID: 3688859108533600468}
   - component: {fileID: 9088227611950326493}
+  - component: {fileID: 7436848863404811415}
   m_Layer: 3
   m_Name: Hand Left
   m_TagString: Untagged
@@ -511,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2d: {fileID: 1254531966161421105}
-  _magnetStrength: 5
+  _magnetStrength: 8
   magnetOn: 0
 --- !u!114 &3688859108533600468
 MonoBehaviour:
@@ -525,8 +526,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7def91219fc4eb54f96ff5ae38eb2357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionKey: 119
+  _actionKey: 97
   _rigidbody2d: {fileID: 1254531966161421105}
+  _coreBody: {fileID: 1122853778230815802}
+  _grabSound: {fileID: 7436848863404811415}
 --- !u!232 &9088227611950326493
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -546,6 +549,102 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 3
   m_MaxDistanceOnly: 1
+--- !u!82 &7436848863404811415
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254531966161421109}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 64428742fb7541d41a0e536f475a8925, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1254531967582792911
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +658,7 @@ GameObject:
   - component: {fileID: 1254531967582792917}
   - component: {fileID: 3688859109292273454}
   - component: {fileID: 3688859109292273455}
+  - component: {fileID: 5621173493152343966}
   m_Layer: 3
   m_Name: Hand Right
   m_TagString: Untagged
@@ -616,7 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2d: {fileID: 1254531967582792907}
-  _magnetStrength: 5
+  _magnetStrength: 8
   magnetOn: 0
 --- !u!114 &3688859109292273454
 MonoBehaviour:
@@ -630,8 +730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7def91219fc4eb54f96ff5ae38eb2357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionKey: 101
+  _actionKey: 102
   _rigidbody2d: {fileID: 1254531967582792907}
+  _coreBody: {fileID: 1122853778230815802}
+  _grabSound: {fileID: 5621173493152343966}
 --- !u!232 &3688859109292273455
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -651,6 +753,102 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 3
   m_MaxDistanceOnly: 1
+--- !u!82 &5621173493152343966
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254531967582792911}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 64428742fb7541d41a0e536f475a8925, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2519057677950200075
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +1138,7 @@ FixedJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.705, y: 0.48}
-  m_DampingRatio: 0
+  m_DampingRatio: 1
   m_Frequency: 0
 --- !u!114 &7004395139109108780
 MonoBehaviour:
@@ -955,7 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2d: {fileID: 6412961131828664089}
-  _magnetStrength: 40
+  _magnetStrength: 15
   magnetOn: 0
 --- !u!1 &6412961132234215419
 GameObject:
@@ -1184,7 +1382,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -1209,7 +1407,7 @@ FixedJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.07, y: -1.13}
-  m_DampingRatio: 0
+  m_DampingRatio: 1
   m_Frequency: 0
 --- !u!70 &6412961133599352954
 CapsuleCollider2D:
@@ -1312,7 +1510,7 @@ FixedJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.804, y: 0.512}
-  m_DampingRatio: 0
+  m_DampingRatio: 1
   m_Frequency: 0
 --- !u!114 &6230715860419090224
 MonoBehaviour:
@@ -1327,5 +1525,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2d: {fileID: 8051316249415056389}
-  _magnetStrength: 40
+  _magnetStrength: 15
   magnetOn: 0

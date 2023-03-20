@@ -6,6 +6,8 @@ public class Clamp : MonoBehaviour
 {
     [SerializeField] private KeyCode _actionKey;
     [SerializeField] private Rigidbody2D _rigidbody2d;
+    [SerializeField] private Rigidbody2D _coreBody;
+    [SerializeField] private AudioSource _grabSound;
     public bool IsClamping { get; private set; }
     private bool _holdingTop;
     private Vector3[] _repeatRaycastOffsets;
@@ -29,12 +31,18 @@ public class Clamp : MonoBehaviour
         }
     }
 
+    void FixedUpdate() {
+        if (IsClamping) {
+            _coreBody.AddForce(new Vector2(0, 5));
+        }
+    }
+
     private void Grab() {
-        // TODO: Sound effect here
         for (int i = 0; i < _repeatRaycastOffsets.Length; i++) {
             RaycastHit2D hit = Physics2D.Raycast(transform.position + _repeatRaycastOffsets[i], Vector3.forward);
 
             if (hit && hit.collider.gameObject.layer.Equals(6)) {
+                _grabSound.Play();
                 _rigidbody2d.bodyType = RigidbodyType2D.Static;
                 IsClamping = true;
                 if (hit.collider.gameObject.name == "Start") {

@@ -15,6 +15,7 @@ public class RouteStart : MonoBehaviour
     public void Begin() {
         if (e_OnRouteSelected != null) {
             e_OnRouteSelected(_route);
+            GameManager.s_CurrentRoute = _route;
         }
     }
 }
