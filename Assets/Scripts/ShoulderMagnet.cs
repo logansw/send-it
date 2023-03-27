@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WigglyMagnet : MouseMagnet
+public class ShoulderMagnet : MouseMagnet
 {
     public override void Magnetize()
     {

@@ -9,7 +9,7 @@ public abstract class MouseMagnet : MonoBehaviour
     public bool magnetOn;
 
     // Update is called once per frame
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (magnetOn && !GameManager.Ragdoll) {
             Magnetize();
