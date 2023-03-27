@@ -451,10 +451,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1254531966161421108}
   - component: {fileID: 1254531966161421105}
-  - component: {fileID: 1254531966161421103}
   - component: {fileID: 3688859108533600468}
   - component: {fileID: 9088227611950326493}
   - component: {fileID: 7436848863404811415}
+  - component: {fileID: 4688638065912507002}
   m_Layer: 3
   m_Name: Hand Left
   m_TagString: Untagged
@@ -499,21 +499,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1254531966161421103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254531966161421109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33427a254a1dbe745b718056ad15f9c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody2d: {fileID: 1254531966161421105}
-  MagnetStrength: 0
-  magnetOn: 0
 --- !u!114 &3688859108533600468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +630,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4688638065912507002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254531966161421109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229f15f14c579914b9d37691197bd518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2d: {fileID: 1254531966161421105}
+  magnetOn: 0
+  _ligament: {fileID: 6412961133359323956}
+  _shoulderTransform: {fileID: 8051316249415056391}
 --- !u!1 &1254531967582792911
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,10 +656,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1254531967582792910}
   - component: {fileID: 1254531967582792907}
-  - component: {fileID: 1254531967582792917}
   - component: {fileID: 3688859109292273454}
   - component: {fileID: 3688859109292273455}
   - component: {fileID: 5621173493152343966}
+  - component: {fileID: 2388052379273945393}
   m_Layer: 3
   m_Name: Hand Right
   m_TagString: Untagged
@@ -703,21 +704,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1254531967582792917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254531967582792911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33427a254a1dbe745b718056ad15f9c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody2d: {fileID: 1254531967582792907}
-  MagnetStrength: 0
-  magnetOn: 0
 --- !u!114 &3688859109292273454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,6 +835,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2388052379273945393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254531967582792911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229f15f14c579914b9d37691197bd518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2d: {fileID: 1254531967582792907}
+  magnetOn: 0
+  _ligament: {fileID: 6412961133099832231}
+  _shoulderTransform: {fileID: 6412961131828664091}
 --- !u!1 &2519057677950200075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _connectionOne: {fileID: 547652076419502577}
-  _connectionTwo: {fileID: 1254531966161421103}
+  _connectionTwo: {fileID: 4688638065912507002}
   _clampTwo: {fileID: 3688859108533600468}
 --- !u!1 &6412961131828664094
 GameObject:
@@ -1153,8 +1155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2d: {fileID: 6412961131828664089}
-  MagnetStrength: 0
   magnetOn: 0
+  MagnetStrength: 0
 --- !u!1 &6412961132234215419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,13 +1207,13 @@ MonoBehaviour:
   _bodyWeight: 0.5
   _bottomWeight: 1.5
   _shoulderStrength: 15
-  _armStrength: 8
+  _armLength: 0
   _bodyRigidbody: {fileID: 1122853778230815802}
   _bottomRigidbody: {fileID: 6412961133599352959}
   _leftShoulder: {fileID: 547652076419502577}
   _rightShoulder: {fileID: 7004395139109108780}
-  _leftArm: {fileID: 1254531966161421103}
-  _rightArm: {fileID: 1254531967582792917}
+  _leftHand: {fileID: 4688638065912507002}
+  _rightHand: {fileID: 2388052379273945393}
 --- !u!1 &6412961133031832104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _connectionOne: {fileID: 7004395139109108780}
-  _connectionTwo: {fileID: 1254531967582792917}
+  _connectionTwo: {fileID: 2388052379273945393}
   _clampTwo: {fileID: 3688859109292273454}
 --- !u!1 &6412961133099832231
 GameObject:
@@ -1307,8 +1309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d593c99f50d37794faed9a3a48c58cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _connectionOne: {fileID: 6412961131828664091}
-  _connectionTwo: {fileID: 1254531967582792910}
   _hand: {fileID: 1122853777899031935}
 --- !u!1 &6412961133359323956
 GameObject:
@@ -1355,8 +1355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d593c99f50d37794faed9a3a48c58cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _connectionOne: {fileID: 8051316249415056391}
-  _connectionTwo: {fileID: 1254531966161421108}
   _hand: {fileID: 1122853777592283634}
 --- !u!1 &6412961133599352957
 GameObject:
@@ -1462,6 +1460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 6412961133599352954}
   _rigidbody: {fileID: 6412961133599352959}
+  IsGrounded: 0
 --- !u!1 &8051316249415056386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,5 +1547,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2d: {fileID: 8051316249415056389}
-  MagnetStrength: 0
   magnetOn: 0
+  MagnetStrength: 0

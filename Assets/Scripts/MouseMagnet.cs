@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class MouseMagnet : MonoBehaviour
 {
     [SerializeField] protected Rigidbody2D _rigidbody2d;
-    [HideInInspector] public float MagnetStrength;
     public bool magnetOn;
 
     // Update is called once per frame

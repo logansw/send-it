@@ -8,24 +8,23 @@ public class CharacterProperties : MonoBehaviour
     [SerializeField] float _bodyWeight;
     [SerializeField] float _bottomWeight;
     [SerializeField] float _shoulderStrength;
-    [SerializeField] float _armStrength;
+    [SerializeField] float _armLength;
 
     [Header("References")]
     [SerializeField] Rigidbody2D _bodyRigidbody;
     [SerializeField] Rigidbody2D _bottomRigidbody;
-    [SerializeField] MouseMagnet _leftShoulder;
-    [SerializeField] MouseMagnet _rightShoulder;
-    [SerializeField] MouseMagnet _leftArm;
-    [SerializeField] MouseMagnet _rightArm;
+    [SerializeField] ShoulderMagnet _leftShoulder;
+    [SerializeField] ShoulderMagnet _rightShoulder;
+    [SerializeField] HandMagnet _leftHand;
+    [SerializeField] HandMagnet _rightHand;
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Start() {
         _bodyRigidbody.mass = _bodyWeight;
         _bottomRigidbody.mass = _bottomWeight;
         _leftShoulder.MagnetStrength = _shoulderStrength;
         _rightShoulder.MagnetStrength = _shoulderStrength;
-        _leftArm.MagnetStrength = _armStrength;
-        _rightArm.MagnetStrength = _armStrength;
+        _leftHand.Initialize(_armLength);
+        _rightHand.Initialize(_armLength);
+
     }
 }

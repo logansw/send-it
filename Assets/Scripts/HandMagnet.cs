@@ -9,10 +9,11 @@ public class HandMagnet : MouseMagnet
     [SerializeField] private Transform _shoulderTransform;
 
     [Header("Properties")]
-    [SerializeField] private float _maxDistance;
+    [HideInInspector] private float _maxDistance;
     private float _maxDelta;
 
-    private void Start() {
+    public void Initialize(float maxDistance) {
+        _maxDistance = maxDistance;
         _maxDelta = _maxDistance / 4.0f;
     }
 

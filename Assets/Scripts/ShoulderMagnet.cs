@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShoulderMagnet : MouseMagnet
 {
+    [HideInInspector] public float MagnetStrength;
     public override void Magnetize()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

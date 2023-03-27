@@ -2131,7 +2131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countdown: {fileID: 1347694738}
-  _chalkyPrefab: {fileID: 7735019941420418632, guid: 1933fc85eb56e3049b6de2eda981dccc, type: 3}
+  _chalkyPrefab: {fileID: 6412961132234215419, guid: 080d628768955394faea2f4ed97c8351, type: 3}
   _virtualCamera: {fileID: 1436333959}
 --- !u!4 &374735065
 Transform:
