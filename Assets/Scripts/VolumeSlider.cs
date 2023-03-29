@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class VolumeSlider : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider;
+    [SerializeField] 
+    private Slider _volumeSlider;
     void Start()
     {
         if (!PlayerPrefs.HasKey("musicVolume")) {
@@ -16,17 +17,17 @@ public class VolumeSlider : MonoBehaviour
 
     public void ChangeVolume()
     {
-        AudioListener.volume = volumeSlider.value;
+        AudioListener.volume = _volumeSlider.value;
         Save();
     }
 
     private void Load()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        _volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 
     private void Save()
     {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+        PlayerPrefs.SetFloat("musicVolume", _volumeSlider.value);
     }
 }
