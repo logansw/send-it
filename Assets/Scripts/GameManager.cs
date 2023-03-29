@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+/// <summary>
+/// Catch-all manager object for coordinating various systems.
+/// Currently handles:
+///     - Spawning player character
+///     - Restarting routes
+///     - Checking if a route has been completed (and cancelling countdowns)
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static int s_HandsOnFinish = 0;

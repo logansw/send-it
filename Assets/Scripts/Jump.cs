@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// (Input Component)
+/// Lets character jump from the floor
+/// </summary>
 public class Jump : MonoBehaviour
 {
     [Header("References")]

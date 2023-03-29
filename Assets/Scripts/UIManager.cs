@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Manages content displayed through UI
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     public TMP_Text RouteName;

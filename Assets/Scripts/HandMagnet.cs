@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Moves hands towards mouse and orients limbs accordingly.
+/// </summary>
 public class HandMagnet : MouseMagnet
 {
     [Header("References")]
@@ -25,6 +28,9 @@ public class HandMagnet : MouseMagnet
         }
     }
 
+    /// <summary>
+    /// Moves hand towards mouse
+    /// </summary>
     public override void Magnetize()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -51,6 +57,11 @@ public class HandMagnet : MouseMagnet
         OrientLigament(shoulderPos, transform.position);
     }
 
+    /// <summary>
+    /// Rotates limb towards hand
+    /// </summary>
+    /// <param name="shoulderPos">Position of shoulder</param>
+    /// <param name="targetPos">Position of hand</param>
     private void OrientLigament(Vector2 shoulderPos, Vector2 targetPos) {
         Vector2 shoulderToTarget = targetPos - shoulderPos;
         float distance = Mathf.Min(Vector2.Distance(targetPos, shoulderPos), _maxDistance);

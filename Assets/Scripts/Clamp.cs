@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// (Input component)
+/// Component for grabbing/releasing hands to holds.
+/// </summary>
 public class Clamp : MonoBehaviour
 {
     [SerializeField] private KeyCode _actionKey;

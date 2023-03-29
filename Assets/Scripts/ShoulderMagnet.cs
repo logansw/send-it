@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// (Input component)
+/// Moves character towards mouse.
+/// </summary>
 public class ShoulderMagnet : MouseMagnet
 {
     [HideInInspector] public float MagnetStrength;

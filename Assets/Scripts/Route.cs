@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// (Blob component)
+/// Route object. Manages holds that make up the route, enabling and disabling them.
+/// Initializes holds, records solve time, contains basic identifying information
+/// (e.g. name, difficulty).
+/// </summary>
 public class Route : MonoBehaviour
 {
     public enum ColorGrade {

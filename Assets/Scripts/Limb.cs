@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// (Blob component)
+/// Component for the entire arm, coordinating between the shoulder and hand.
+/// </summary>
 public class Limb : MonoBehaviour
 {
     [SerializeField] private MouseMagnet _connectionOne;

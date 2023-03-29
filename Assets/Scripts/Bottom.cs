@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// (Blob component)
+/// Bottom of character. Handles what happens when character is touching the floor
+/// </summary>
 public class Bottom : MonoBehaviour
 {
+    // Movement dead zone. If mouse is within [EPSILON] of character, no movement occurs
     private const float EPSILON = 1.0f;
+    // Movement extremes. If mouse is [RANGE] units from character, max speed movement
     private const float RANGE = 10.0f;
+    // Movement scale factor. Bigger number = faster :)
     private const float SPEED = 1.2f;
 
+    [Header("References")]
     [SerializeField] private Collider2D _collider;
     [SerializeField] private Rigidbody2D _rigidbody;
+
+    [HideInInspector] public bool IsGrounded;
     private float _originalWeight;
-    public bool IsGrounded;
 
     void Start() {
         _originalWeight = _rigidbody.mass;
@@ -20,9 +29,9 @@ public class Bottom : MonoBehaviour
 
     void FixedUpdate() {
         if (IsGrounded) {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 bottomPos = transform.position;
-            Vector2 bottomToMouse = mousePos - bottomPos;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 bottomPosition = transform.position;
+            Vector2 bottomToMouse = mousePosition - bottomPosition;
             float bottomToMouseHorizontal = Vector2.Dot(bottomToMouse, Vector2.right);
 
             if (Mathf.Abs(bottomToMouseHorizontal) < EPSILON) {

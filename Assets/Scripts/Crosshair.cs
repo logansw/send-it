@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CursorGuide : MonoBehaviour
+/// <summary>
+/// Crosshair so people don't lose track of the mouse
+/// </summary>
+public class Crosshair : MonoBehaviour
 {
     void Start() {
         Cursor.visible = false;

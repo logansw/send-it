@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// (Blob component)
+/// Climbing hold
+/// </summary>
 public class Holdable : MonoBehaviour
 {
     [SerializeField] private Collider2D _collider;

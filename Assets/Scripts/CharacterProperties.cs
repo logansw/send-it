@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Inspector-exposed class for controlling properties about attached character
+/// (e.g. mass, shoulder strength, arm length).
+/// </summary>
 public class CharacterProperties : MonoBehaviour
 {
     [Header("Properties")]

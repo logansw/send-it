@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component to be added to the first hold of a route. Notifies other components
+/// when it is grabbed.
+/// </summary>
 public class RouteStart : MonoBehaviour
 {
     private Route _route;

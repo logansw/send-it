@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles level selection.
+/// </summary>
 public class LevelManager : MonoBehaviour
 {
     public static Vector3 SpawnPosition;
@@ -31,7 +34,6 @@ public class LevelManager : MonoBehaviour
     }
 
     public void ChooseRoute(Route route) {
-        Debug.Log("Route chosen: " + route.name);
         if (CurrentRoute != null) { CurrentRoute.Disable(); }
         CurrentRoute = route;
         CurrentRoute.Enable();

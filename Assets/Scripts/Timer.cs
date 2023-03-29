@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+/// <summary>
+/// Tracks passage of time
+/// </summary>
 public class Timer : MonoBehaviour
 {
     private DateTime _startTime;
