@@ -532,7 +532,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 3
+  m_Distance: 2.5
   m_MaxDistanceOnly: 1
 --- !u!82 &7436848863404811415
 AudioSource:
@@ -737,7 +737,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 3
+  m_Distance: 2.5
   m_MaxDistanceOnly: 1
 --- !u!82 &5621173493152343966
 AudioSource:
@@ -1207,7 +1207,7 @@ MonoBehaviour:
   _bodyWeight: 0.5
   _bottomWeight: 1.5
   _shoulderStrength: 15
-  _armLength: 0
+  _armLength: 2.5
   _bodyRigidbody: {fileID: 1122853778230815802}
   _bottomRigidbody: {fileID: 6412961133599352959}
   _leftShoulder: {fileID: 547652076419502577}
