@@ -8,6 +8,7 @@ public class MusicPlayer : MonoBehaviour
     public AudioSource MusicLoop;
     public AudioSource MusicNoLoop;
     private bool _looping = false;
+    private static MusicPlayer instance = null;
 
     void Awake() 
     {
@@ -31,11 +32,13 @@ public class MusicPlayer : MonoBehaviour
 
     private void InitializeMusicObjects()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
-        if (objs.Length > 1) {
-            Destroy(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            return;
         }
-        DontDestroyOnLoad(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     private void InitializeMusicVolume()
