@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    // TODO: Change these method names to corresponding gym names
+    public void LoadGym1()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Main");
+    }
+
+    public void LoadGym2()
+    {
+        SceneManager.LoadScene("Gym2");
     }
 }
