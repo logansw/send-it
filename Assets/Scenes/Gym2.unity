@@ -1905,7 +1905,7 @@ MonoBehaviour:
   _two: {fileID: 21300000, guid: 7f73a39f3576627499964ed0ca71201d, type: 3}
   _one: {fileID: 21300000, guid: da86bff87a3d4904987c6c90a35a195d, type: 3}
   _top: {fileID: 21300000, guid: 25aebf35fa687e643adc0fd1fd307de9, type: 3}
-  CountdownSound: {fileID: 1347694739}
+  _countdownSound: {fileID: 1347694739}
   _timer: {fileID: 374735066}
 --- !u!82 &1347694739
 AudioSource:
