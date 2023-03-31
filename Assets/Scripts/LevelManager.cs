@@ -34,9 +34,10 @@ public class LevelManager : MonoBehaviour
     }
 
     public void ChooseRoute(Route route) {
-        if (CurrentRoute != null) { CurrentRoute.Disable(); }
+        if (CurrentRoute != null) { CurrentRoute.DisableHolds(); CurrentRoute.DisableObstacles(); }
         CurrentRoute = route;
-        CurrentRoute.Enable();
+        CurrentRoute.EnableHolds();
+        CurrentRoute.EnableObstacles();
         SpawnPosition = route.RouteStart.transform.position;
     }
 }

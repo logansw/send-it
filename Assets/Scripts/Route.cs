@@ -31,25 +31,39 @@ public class Route : MonoBehaviour
 
     public void Awake() {
         InitializeHolds();
+        InitializeObstacles();
         // Initialize best time
         BestTime = System.TimeSpan.MaxValue;
     }
 
     public void Start() {
-        Disable();
+        DisableHolds();
+        DisableObstacles();
     }
 
-    public void Enable() {
+    public void EnableHolds() {
         for (int i = 0; i < Holds.Count; i++) {
             Holds[i].Enable();
         }
     }
 
-    public void Disable() {
+    public void DisableHolds() {
         for (int i = 0; i < Holds.Count; i++) {
             if (Holds[i].name != "Start") {
                 Holds[i].Disable();
             }
+        }
+    }
+
+    public void EnableObstacles() {
+        for (int i = 0; i < Obstacles.Count; i++) {
+            Obstacles[i].Enable();
+        }
+    }
+
+    public void DisableObstacles() {
+        for (int i = 0; i < Obstacles.Count; i++) {
+            Obstacles[i].Disable();
         }
     }
 
@@ -77,9 +91,6 @@ public class Route : MonoBehaviour
             if (child.GetComponent<Obstacle>() != null) {
                 Obstacles.Add(child.GetComponent<Obstacle>());
             }
-        }
-        for (int i = 0; i < Obstacles.Count; i++) {
-            Obstacles[i].SetColor(RouteColor);
         }
     }
 }
