@@ -339,6 +339,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 507409252}
     m_Modifications:
+    - target: {fileID: 8508091579025498865, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
+      propertyPath: _safeHold
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8508091579025498866, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3970,6 +3974,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 507409252}
     m_Modifications:
+    - target: {fileID: 8508091579025498865, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
+      propertyPath: _safeHold
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8508091579025498866, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4571,6 +4579,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 507409252}
     m_Modifications:
+    - target: {fileID: 8508091579025498865, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
+      propertyPath: _safeHold
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8508091579025498866, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5444,6 +5456,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 507409252}
     m_Modifications:
+    - target: {fileID: 8508091579025498865, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
+      propertyPath: _safeHold
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8508091579025498866, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5896,6 +5912,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 507409252}
     m_Modifications:
+    - target: {fileID: 8508091579025498865, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
+      propertyPath: _safeHold
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8508091579025498866, guid: 53e1221cec7b1764c81d77e9fd774627, type: 3}
       propertyPath: m_RootOrder
       value: 4

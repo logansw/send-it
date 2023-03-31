@@ -13,6 +13,10 @@ public class Holdable : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private HoldTimer _holdTimerPrefab;
 
+    [Header("Properties")]
+    [SerializeField] private float _duration;
+    [SerializeField] private bool _safeHold;
+
     public HoldTimer HoldTimer;
     private Color32 _color;
 
@@ -24,13 +28,14 @@ public class Holdable : MonoBehaviour
         _collider.enabled = true;
         _color.a = 255;
         _spriteRenderer.color = _color;
-        HoldTimer.RefreshTimer();
+        HoldTimer.RefreshTimer(_duration);
     }
     public void Disable() {
         _collider.enabled = false;
         _color.a = 100;
         _spriteRenderer.color = _color;
     }
+
     public void SetColor(Route.ColorGrade color) {
         switch (color) {
             case Route.ColorGrade.Yellow:
@@ -65,7 +70,7 @@ public class Holdable : MonoBehaviour
     }
 
     public void DisplayTimer(bool active) {
-        if (HoldTimer != null) {
+        if (HoldTimer != null && !_safeHold) {
             HoldTimer.gameObject.SetActive(active);
         }
     }

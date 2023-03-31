@@ -49,6 +49,7 @@ MonoBehaviour:
   _collider: {fileID: 0}
   _spriteRenderer: {fileID: 6874270223039686126}
   _holdTimerPrefab: {fileID: 0}
+  _duration: 5
   HoldTimer: {fileID: 3217030590151126845}
 --- !u!212 &6874270223039686126
 SpriteRenderer:
@@ -230,7 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerImage: {fileID: 7125210645129141443}
-  _holdDuration: 10
 --- !u!224 &3146409171083314222 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7763234559065266941, guid: 98eb6eed9238f7e459176031be6abd5e, type: 3}

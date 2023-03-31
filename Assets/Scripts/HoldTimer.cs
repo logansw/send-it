@@ -8,18 +8,12 @@ public class HoldTimer : MonoBehaviour
     [Header("References")]
     [SerializeField] private Image _timerImage;
 
-    [Header("Properties")]
-    [SerializeField] private float _holdDuration;
-
+    private float _holdDuration;
     private float _remainingDuration;
     private bool _depletedThisFrame;
 
-    public void Initialize(GameObject holdable) {
-        RefreshTimer();
-        transform.position = holdable.transform.position;
-    }
-
-    public void RefreshTimer() {
+    public void RefreshTimer(float duration) {
+        _holdDuration = duration;
         _remainingDuration = _holdDuration;
     }
 
