@@ -8,6 +8,11 @@ using UnityEngine;
 /// Initializes holds, records solve time, contains basic identifying information
 /// (e.g. name, difficulty).
 /// </summary>
+///
+/// Attach Route.cs to the parent object (containing all Holdable objects). Give the
+/// parent object a name to name the route and assign it a color. Rename the starting
+/// hold to "Start", and rename the final hold to "Top". Finally, drag the Route into
+/// LevelManager.
 public class Route : MonoBehaviour
 {
     public enum ColorGrade {
@@ -21,12 +26,11 @@ public class Route : MonoBehaviour
         Pink,
         White
     }
-    public List<Holdable> Holds;
-    public RouteStart RouteStart;
-    public ColorGrade RouteColor;
-    public int Difficulty;
-    public System.TimeSpan BestTime;
+    [SerializeField] private ColorGrade _routeColor;
+    [HideInInspector] public RouteStart RouteStart;
+    [HideInInspector] public System.TimeSpan BestTime;
     private System.DateTime _startTime;
+    private List<Holdable> Holds;
 
     public void Awake() {
         for (int i = 0; i < transform.childCount; i++) {
@@ -38,7 +42,7 @@ public class Route : MonoBehaviour
             }
         }
         for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].SetColor(RouteColor);
+            Holds[i].SetColor(_routeColor);
         }
         BestTime = System.TimeSpan.MaxValue;
     }
