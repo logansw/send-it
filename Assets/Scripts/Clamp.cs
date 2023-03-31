@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class Clamp : MonoBehaviour
 {
+    // When player grabs, upward force is applied to make vertical progress easier.
+    private const int UPWARD_ASSIST_FORCE = 6;
     [SerializeField] private KeyCode _actionKey;
     [SerializeField] private Rigidbody2D _rigidbody2d;
     [SerializeField] private Rigidbody2D _coreBody;
@@ -15,6 +17,7 @@ public class Clamp : MonoBehaviour
     public bool IsClamping { get; private set; }
     private bool _holdingTop;
     private Vector3[] _repeatRaycastOffsets;
+    private Holdable _currentHold;
 
     private void Start() {
         _repeatRaycastOffsets = new Vector3[5];
@@ -37,7 +40,12 @@ public class Clamp : MonoBehaviour
 
     void FixedUpdate() {
         if (IsClamping) {
-            _coreBody.AddForce(new Vector2(0, 5));
+            _coreBody.AddForce(new Vector2(0, UPWARD_ASSIST_FORCE));
+            if (_currentHold == null) { return; }
+            float remaining = _currentHold.HoldTimer.Deplete();
+            if (remaining <= 0) {
+                Release();
+            }
         }
     }
 
@@ -55,6 +63,9 @@ public class Clamp : MonoBehaviour
                 } else if (hit.collider.gameObject.name == "Top") {
                     _holdingTop = true;
                     GameManager.s_HandsOnFinish++;
+                } else {
+                    _currentHold = hit.collider.gameObject.GetComponent<Holdable>();
+                    _currentHold.DisplayTimer(true);
                 }
                 return;
             }
@@ -68,5 +79,9 @@ public class Clamp : MonoBehaviour
             _holdingTop = false;
             GameManager.s_HandsOnFinish--;
         }
+        if (_currentHold != null) {
+            _currentHold.DisplayTimer(false);
+        }
+        _currentHold = null;
     }
 }
