@@ -33,6 +33,7 @@ public class Route : MonoBehaviour
     private List<Holdable> Holds;
 
     public void Awake() {
+        Holds = new List<Holdable>();
         for (int i = 0; i < transform.childCount; i++) {
             GameObject child = transform.GetChild(i).gameObject;
             Holds.Add(child.GetComponent<Holdable>());
@@ -42,7 +43,7 @@ public class Route : MonoBehaviour
             }
         }
         for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].SetColor(_routeColor);
+            Holds[i].Initialize(_routeColor);
         }
         BestTime = System.TimeSpan.MaxValue;
     }

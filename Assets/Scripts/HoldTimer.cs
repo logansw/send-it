@@ -7,13 +7,21 @@ public class HoldTimer : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Image _timerImage;
+    [SerializeField] private Image _timerBackgroundImage;
 
     private float _holdDuration;
     private float _remainingDuration;
     private bool _depletedThisFrame;
 
-    public void RefreshTimer(float duration) {
+    public void Initialize(float duration, Color32 color) {
         _holdDuration = duration;
+        _timerImage.color = color;
+        Color32 transparentColor = color;
+        transparentColor.a = 100;
+        _timerBackgroundImage.color = transparentColor;
+    }
+
+    public void RefreshTimer() {
         _remainingDuration = _holdDuration;
     }
 

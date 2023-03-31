@@ -20,6 +20,11 @@ public class Holdable : MonoBehaviour
     public HoldTimer HoldTimer;
     private Color32 _color;
 
+    public void Initialize(Route.ColorGrade color) {
+        SetColor(color);
+        HoldTimer.Initialize(_duration, new Color32(255, 255, 255, 255));
+    }
+
     public void Awake() {
         _collider = GetComponent<Collider2D>();
     }
@@ -28,7 +33,7 @@ public class Holdable : MonoBehaviour
         _collider.enabled = true;
         _color.a = 255;
         _spriteRenderer.color = _color;
-        HoldTimer.RefreshTimer(_duration);
+        HoldTimer.RefreshTimer();
     }
     public void Disable() {
         _collider.enabled = false;
