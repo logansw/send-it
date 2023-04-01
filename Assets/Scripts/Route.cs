@@ -30,20 +30,20 @@ public class Route : MonoBehaviour
     [HideInInspector] public RouteStart RouteStart;
     [HideInInspector] public System.TimeSpan BestTime;
     private System.DateTime _startTime;
-    private List<Holdable> Holds;
+    private List<Holdable> _holds;
 
     public void Awake() {
-        Holds = new List<Holdable>();
+        _holds = new List<Holdable>();
         for (int i = 0; i < transform.childCount; i++) {
             GameObject child = transform.GetChild(i).gameObject;
-            Holds.Add(child.GetComponent<Holdable>());
+            _holds.Add(child.GetComponent<Holdable>());
             if (child.name == "Start") {
                 RouteStart = child.AddComponent<RouteStart>();
                 RouteStart.Initialize(this);
             }
         }
-        for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].Initialize(_routeColor);
+        for (int i = 0; i < _holds.Count; i++) {
+            _holds[i].Initialize(_routeColor);
         }
         BestTime = System.TimeSpan.MaxValue;
     }
@@ -53,15 +53,15 @@ public class Route : MonoBehaviour
     }
 
     public void Enable() {
-        for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].Enable();
+        for (int i = 0; i < _holds.Count; i++) {
+            _holds[i].Enable();
         }
     }
 
     public void Disable() {
-        for (int i = 0; i < Holds.Count; i++) {
-            if (Holds[i].name != "Start") {
-                Holds[i].Disable();
+        for (int i = 0; i < _holds.Count; i++) {
+            if (_holds[i].name != "Start") {
+                _holds[i].Disable();
             }
         }
     }
