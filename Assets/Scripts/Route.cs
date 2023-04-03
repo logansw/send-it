@@ -32,7 +32,7 @@ public class Route : MonoBehaviour
     public List<Obstacle> Obstacles;
     public int Difficulty;
     private System.DateTime _startTime;
-    private List<Holdable> _holds;
+    public List<Holdable> _holds;
 
     public void Awake() {
         InitializeHolds();

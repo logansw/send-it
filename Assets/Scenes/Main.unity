@@ -1461,9 +1461,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 2
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &248930129
 Transform:
   m_ObjectHideFlags: 0
@@ -1516,9 +1517,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 7
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &249659110
 Transform:
   m_ObjectHideFlags: 0
@@ -2471,9 +2473,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 1
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!1001 &417371523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2891,9 +2894,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 1
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &507409252
 Transform:
   m_ObjectHideFlags: 0
@@ -3018,9 +3022,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 0
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &524005881
 Transform:
   m_ObjectHideFlags: 0
@@ -3220,9 +3225,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 6
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &536897455
 Transform:
   m_ObjectHideFlags: 0
@@ -4925,9 +4931,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 6
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &960376175
 Transform:
   m_ObjectHideFlags: 0
@@ -5140,9 +5147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 4
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!1001 &1026299114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5235,9 +5243,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 3
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &1029657137
 Transform:
   m_ObjectHideFlags: 0
@@ -5676,9 +5685,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 0
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &1205395114
 Transform:
   m_ObjectHideFlags: 0
@@ -6655,9 +6665,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 2
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &1348506683
 Transform:
   m_ObjectHideFlags: 0
@@ -7390,9 +7401,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routeColor: 4
-  Holds: []
-  Obstacles: []
   RouteStart: {fileID: 0}
+  Obstacles: []
+  Difficulty: 0
+  _holds: []
 --- !u!4 &1453549984
 Transform:
   m_ObjectHideFlags: 0

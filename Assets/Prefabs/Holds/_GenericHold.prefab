@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 0}
   _spriteRenderer: {fileID: 6874270223039686126}
-  _holdTimerPrefab: {fileID: 0}
+  _holdTimerPrefab: {fileID: 3217030590151126845}
   _duration: 5
   _safeHold: 0
   HoldTimer: {fileID: 3217030590151126845}
