@@ -4,8 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// (Blob component)
-/// Route object. Manages holds that make up the route, enabling and disabling them.
-/// Initializes holds, records solve time, contains basic identifying information
+/// Route object. Manages _holds that make up the route, enabling and disabling them.
+/// Initializes _holds, records solve time, contains basic identifying information
 /// (e.g. name, difficulty).
 /// </summary>
 ///
@@ -29,39 +29,72 @@ public class Route : MonoBehaviour
     [SerializeField] private ColorGrade _routeColor;
     [HideInInspector] public RouteStart RouteStart;
     [HideInInspector] public System.TimeSpan BestTime;
+    public List<Obstacle> Obstacles;
+    public int Difficulty;
     private System.DateTime _startTime;
-    private List<Holdable> Holds;
+    private List<Holdable> _holds;
 
     public void Awake() {
-        Holds = new List<Holdable>();
+        InitializeHolds();
+        InitializeObstacles();
+        // Initialize best time
+        BestTime = System.TimeSpan.MaxValue;
+    }
+
+    public void Start() {
+        DisableHolds();
+        DisableObstacles();
+    }
+
+    public void EnableHolds() {
+        for (int i = 0; i < _holds.Count; i++) {
+            _holds[i].Enable();
+        }
+    }
+
+    public void DisableHolds() {
+        for (int i = 0; i < _holds.Count; i++) {
+            if (_holds[i].name != "Start") {
+                _holds[i].Disable();
+            }
+        }
+    }
+
+    public void EnableObstacles() {
+        for (int i = 0; i < Obstacles.Count; i++) {
+            Obstacles[i].Enable();
+        }
+    }
+
+    public void DisableObstacles() {
+        for (int i = 0; i < Obstacles.Count; i++) {
+            Obstacles[i].Disable();
+        }
+    }
+
+    private void InitializeHolds() 
+    {
         for (int i = 0; i < transform.childCount; i++) {
             GameObject child = transform.GetChild(i).gameObject;
-            Holds.Add(child.GetComponent<Holdable>());
+            if (child.GetComponent<Holdable>() != null) {
+                _holds.Add(child.GetComponent<Holdable>());
+            }
             if (child.name == "Start") {
                 RouteStart = child.AddComponent<RouteStart>();
                 RouteStart.Initialize(this);
             }
         }
-        for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].Initialize(_routeColor);
-        }
-        BestTime = System.TimeSpan.MaxValue;
-    }
-
-    public void Start() {
-        Disable();
-    }
-
-    public void Enable() {
-        for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].Enable();
+        for (int i = 0; i < _holds.Count; i++) {
+            _holds[i].Initialize(_routeColor);
         }
     }
 
-    public void Disable() {
-        for (int i = 0; i < Holds.Count; i++) {
-            if (Holds[i].name != "Start") {
-                Holds[i].Disable();
+    private void InitializeObstacles()
+    {
+        for (int i = 0; i < transform.childCount; i++) {
+            GameObject child = transform.GetChild(i).gameObject;
+            if (child.GetComponent<Obstacle>() != null) {
+                Obstacles.Add(child.GetComponent<Obstacle>());
             }
         }
     }
