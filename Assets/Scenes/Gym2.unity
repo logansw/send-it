@@ -220,11 +220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1978cf19ccbcaaf44b7f6015335421b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Holds: []
-  Obstacles: []
+  _routeColor: 0
   RouteStart: {fileID: 0}
-  RouteColor: 1
+  Obstacles: []
   Difficulty: 0
+  _holds: []
 --- !u!4 &248930129
 Transform:
   m_ObjectHideFlags: 0
@@ -548,11 +548,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1978cf19ccbcaaf44b7f6015335421b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Holds: []
-  Obstacles: []
+  _routeColor: 0
   RouteStart: {fileID: 0}
-  RouteColor: 2
+  Obstacles: []
   Difficulty: 0
+  _holds: []
 --- !u!4 &325005788
 Transform:
   m_ObjectHideFlags: 0
@@ -1706,6 +1706,10 @@ PrefabInstance:
     - target: {fileID: 4228410519529397770, guid: 083b85691070ff24cae9cc734501b583, type: 3}
       propertyPath: m_Name
       value: H1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4228410519529397773, guid: 083b85691070ff24cae9cc734501b583, type: 3}
+      propertyPath: _duration
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4228410519529397774, guid: 083b85691070ff24cae9cc734501b583, type: 3}
       propertyPath: m_RootOrder

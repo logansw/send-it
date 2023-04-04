@@ -4,10 +4,15 @@ using UnityEngine;
 
 /// <summary>
 /// (Blob component)
-/// Route object. Manages holds that make up the route, enabling and disabling them.
-/// Initializes holds, records solve time, contains basic identifying information
+/// Route object. Manages _holds that make up the route, enabling and disabling them.
+/// Initializes _holds, records solve time, contains basic identifying information
 /// (e.g. name, difficulty).
 /// </summary>
+///
+/// Attach Route.cs to the parent object (containing all Holdable objects). Give the
+/// parent object a name to name the route and assign it a color. Rename the starting
+/// hold to "Start", and rename the final hold to "Top". Finally, drag the Route into
+/// LevelManager.
 public class Route : MonoBehaviour
 {
     public enum ColorGrade {
@@ -21,13 +26,13 @@ public class Route : MonoBehaviour
         Pink,
         White
     }
-    public List<Holdable> Holds;
+    [SerializeField] private ColorGrade _routeColor;
+    [HideInInspector] public RouteStart RouteStart;
+    [HideInInspector] public System.TimeSpan BestTime;
     public List<Obstacle> Obstacles;
-    public RouteStart RouteStart;
-    public ColorGrade RouteColor;
     public int Difficulty;
-    public System.TimeSpan BestTime;
     private System.DateTime _startTime;
+    public List<Holdable> _holds;
 
     public void Awake() {
         InitializeHolds();
@@ -42,15 +47,15 @@ public class Route : MonoBehaviour
     }
 
     public void EnableHolds() {
-        for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].Enable();
+        for (int i = 0; i < _holds.Count; i++) {
+            _holds[i].Enable();
         }
     }
 
     public void DisableHolds() {
-        for (int i = 0; i < Holds.Count; i++) {
-            if (Holds[i].name != "Start") {
-                Holds[i].Disable();
+        for (int i = 0; i < _holds.Count; i++) {
+            if (_holds[i].name != "Start") {
+                _holds[i].Disable();
             }
         }
     }
@@ -72,15 +77,15 @@ public class Route : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++) {
             GameObject child = transform.GetChild(i).gameObject;
             if (child.GetComponent<Holdable>() != null) {
-                Holds.Add(child.GetComponent<Holdable>());
+                _holds.Add(child.GetComponent<Holdable>());
             }
             if (child.name == "Start") {
                 RouteStart = child.AddComponent<RouteStart>();
                 RouteStart.Initialize(this);
             }
         }
-        for (int i = 0; i < Holds.Count; i++) {
-            Holds[i].SetColor(RouteColor);
+        for (int i = 0; i < _holds.Count; i++) {
+            _holds[i].Initialize(_routeColor);
         }
     }
 

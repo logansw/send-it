@@ -8,9 +8,22 @@ using UnityEngine;
 /// </summary>
 public class Holdable : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Collider2D _collider;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private HoldTimer _holdTimerPrefab;
+
+    [Header("Properties")]
+    [SerializeField] private float _duration;
+    [SerializeField] private bool _safeHold;
+
+    public HoldTimer HoldTimer;
     private Color32 _color;
+
+    public void Initialize(Route.ColorGrade color) {
+        SetColor(color);
+        HoldTimer.Initialize(_duration, new Color32(255, 255, 255, 255));
+    }
 
     public void Awake() {
         _collider = GetComponent<Collider2D>();
@@ -20,6 +33,7 @@ public class Holdable : MonoBehaviour
         _collider.enabled = true;
         _color.a = 255;
         _spriteRenderer.color = _color;
+        HoldTimer.RefreshTimer();
     }
     public void Disable() {
         _collider.enabled = false;
@@ -58,5 +72,11 @@ public class Holdable : MonoBehaviour
                 break;
         }
         _spriteRenderer.color = _color;
+    }
+
+    public void DisplayTimer(bool active) {
+        if (HoldTimer != null && !_safeHold) {
+            HoldTimer.gameObject.SetActive(active);
+        }
     }
 }
